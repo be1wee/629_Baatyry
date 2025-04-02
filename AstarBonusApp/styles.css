@@ -1,0 +1,33 @@
+body
+{
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #cecece;
+}
+
+#mapContainer
+{
+    display: grid;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+.cell 
+{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    place-items: center center;
+    border: 1px solid #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.start { background-color: green; }
+.end { background-color: red; }
+.wall { background-color: black; }
+.path { background-color: yellow; }
