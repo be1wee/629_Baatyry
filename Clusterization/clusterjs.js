@@ -1,11 +1,11 @@
-
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const clusterButton = document.getElementById('clusterButton');
+const input = document.getElementById('input');
 
 
-const resizeCanvas = () => {
-    canvas.width = canvas.offsetWidth; 
+function resizeCanvas(){
+    canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 };
 resizeCanvas();
@@ -27,13 +27,18 @@ canvas.addEventListener('click', function(event) {
     ctx.fill();
 });
 
+resetButton.addEventListener('click', function() {
+    points = [];
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
 function kMeans(points, k) {
     let centroids = [];
     for (let i = 0; i < k; i++) {
         centroids.push(points[i]);
     }
 
-    let classes = new Array(points.length).fill(0);
+    let numbers_of_clusters = new Array(points.length).fill(0);
     let itr = true;
 
     while (itr) {
@@ -51,9 +56,9 @@ function kMeans(points, k) {
                 }
             }
 
-            if (classes[i] !== closestCentroid) {
+            if (numbers_of_clusters[i] !== closestCentroid) {
                 itr = true;
-                classes[i] = closestCentroid;
+                numbers_of_clusters[i] = closestCentroid;
             }
         }
 
@@ -63,7 +68,7 @@ function kMeans(points, k) {
             let count = 0;
 
             for (let j = 0; j < points.length; j++) {
-                if (classes[j] === i) {
+                if (numbers_of_clusters[j] === i) {
                     sumX += points[j].x;
                     sumY += points[j].y;
                     count++;
@@ -77,16 +82,16 @@ function kMeans(points, k) {
         }
     }
 
-    return { centroids, classes };
+    return { centroids, numbers_of_clusters: numbers_of_clusters };
 }
 
-function drawClusters(points, centroids, classes) {
+function drawClusters(points, centroids, numbers_of_clusters) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < points.length; i++) {
         ctx.beginPath();
         ctx.arc(points[i].x, points[i].y, 5, 0, 2 * Math.PI);
-        ctx.fillStyle = `hsl(${classes[i] * 360 / centroids.length}, 100%, 50%)`;
+        ctx.fillStyle = `hsl(${numbers_of_clusters[i] * 360 / centroids.length}, 100%, 50%)`;
         ctx.fill();
     }
 
@@ -101,8 +106,16 @@ function drawClusters(points, centroids, classes) {
 clusterButton.addEventListener('click', function() {
     if (points.length > 0) {
         const k = 4;
-        const result = kMeans(points, k);
-        drawClusters(points, result.centroids, result.classes);
+        let inputValue = Number(input.value);
+        if(inputValue !== 0){
+            const result = kMeans(points, inputValue);
+            drawClusters(points, result.centroids, result.numbers_of_clusters);
+        }
+        else{
+            const result = kMeans(points, k);
+            drawClusters(points, result.centroids, result.numbers_of_clusters);
+        }
+        
     }
 });
 
