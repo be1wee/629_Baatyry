@@ -5,48 +5,89 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
-body{ 
-    height: 100vh;
-}
 
+:root{
+    --control_elements_width: 20vw;
+    --control_elements_font-size: 25px;
+    --control_elements_padding: 20px; 
+    --control_width:80vw;
+    --bord_rad: 100px;
+    --btn_bg_color: rgb(144, 0, 255);
+    --btn_font_color:rgb(38, 1, 100);
+}
+  
 main{ 
+    height: 100dvh;
+    width: 100dvw;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
+#canvas{
+    height: 100dvh;
+    border: none;
+    width: 100vw;
+}
+.control{
+    width:var(--control_width);
 
-canvas{
-    height: 100vh;
-    width: 100vw; 
+    display: flex;
+    justify-content: space-around;
+}
+.control_bg{
+    width:var(--control_width);
+    height: 104px;
+    bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    position:absolute;
+    
+    border-radius: var(--bord_rad);
+    background-color: var(--btn_font_color);
 }
 
-button{
-    position: absolute;
-    width: 350px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: 3em;
-    border-radius: 100px;
+.btn{
+    width: var(--control_elements_width);
+    border-radius: var(--bord_rad);
+    background: var(--btn_bg_color);
+
     cursor: pointer;
     border: none;
-    background: rgb(144, 0, 255);
-    box-shadow: 0px 10px 10px black;
-
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
- button:active{
+.btn:hover {
+    box-shadow: 0 0 0 4px var(--btn_font_color), 
+                0 0 0 8px var(--btn_bg_color);
+}
+.btn:active{
     transform: scale(0.92);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.textInBtn{
+    color: var(--btn_font_color);
+    font-family: "Quicksand";
+    padding:var(--control_elements_padding);
+    font-size: var(--control_elements_font-size);
 }
 
+.input{
+    text-align: center;
+    font-family: "Quicksand";
+    padding:var(--control_elements_padding);
+    font-size: var(--control_elements_font-size);
 
-.clusterize{
-    color: rgb(38, 1, 100);
-    padding:30px;
-    font-size: 3vw;
-    font-family: "Quicksand"
-} 
+    width: var(--control_elements_width);
+    border-radius: var(--bord_rad);
+    background: var(--btn_bg_color);
+    cursor: pointer;
+    border: none;
+}
+.input::placeholder{
+    color: rgba(37, 1, 100, 0.597);
+    text-align: center;
+}
+.input:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px var(--btn_font_color), 
+                0 0 0 8px var(--btn_bg_color);
+}
