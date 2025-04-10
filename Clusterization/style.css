@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@media(max-aspect-ratio: 4/3){
+    :root{
+        --control_elements_width: 27vw;
+        --control_elements_font-size: 20px;
+        --control_elements_padding: 25px; 
+        --control_width:94vw;
+        --bord_rad: 200px;
+        --btn_bg_color: rgb(144, 0, 255);
+        --btn_font_color:rgb(38, 1, 100);
+    }
+    main{ 
+        height: 100dvh;
+        width: 100dvw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #canvas{
+        height: 100dvh;
+        width: 100dvw;
+        border: none;
+    }
+    .control{    
+        width:var(--control_width);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .control_bg{
+        width:var(--control_width);
+        height: 13dvh;
+        bottom: 5dvh;
+    
+        display: flex;
+        align-items: center;
+        position:absolute;
+        
+        border-radius: var(--bord_rad);
+        background-color: var(--btn_font_color);
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        width: var(--control_elements_width);
+        border-radius: var(--bord_rad);
+        background: var(--btn_bg_color);
+        
+        cursor: pointer;
+        border: none;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover {
+        box-shadow: 0 0 0 4px var(--btn_font_color), 
+                    0 0 0 8px var(--btn_bg_color);
+    }
+    .btn:active{
+        transform: scale(0.92);
+    }
+    .textInBtn{
+        color: var(--btn_font_color);
+        font-family: "Quicksand";
+        padding:var(--control_elements_padding);
+        font-size: var(--control_elements_font-size);
+    }
+    
+    .input{
+        text-align: center;
+        font-family: "Quicksand";
+        padding:var(--control_elements_padding);
+        font-size: var(--control_elements_font-size);
+    
+        width: var(--control_elements_width);
+        border-radius: var(--bord_rad);
+        background: var(--btn_bg_color);
+        cursor: pointer;
+        border: none;
+    }
+    .input::placeholder{
+        color: rgba(37, 1, 100, 0.597);
+        text-align: center;
+    }
+    .input:focus{
+        outline: none;
+        box-shadow: 0 0 0 4px var(--btn_font_color), 
+                    0 0 0 8px var(--btn_bg_color);
+    }
+
+}
+@media(min-aspect-ratio: 16/9){
+    :root{
+        --control_elements_width: 20vw;
+        --control_elements_font-size: 25px;
+        --control_elements_padding: 20px; 
+        --control_width:80vw;
+        --bord_rad: 100px;
+        --btn_bg_color: rgb(144, 0, 255);
+        --btn_font_color:rgb(38, 1, 100);
+    }
+    main{ 
+        height: 100dvh;
+        width: 100dvw;
+        display: flex;
+        justify-content: center;
+    }
+    #canvas{
+        height: 100dvh;
+        width: 100vw;
+        border: none;
+    }
+    .control{
+        width:var(--control_width);
+    
+        display: flex;
+        justify-content: space-around;
+    }
+    .control_bg{
+        width:var(--control_width);
+        height: 104px;
+        bottom: 20px;
+    
+        display: flex;
+        align-items: center;
+        position:absolute;
+        
+        border-radius: var(--bord_rad);
+        background-color: var(--btn_font_color);
+    }
+    
+    .btn{
+        width: var(--control_elements_width);
+        border-radius: var(--bord_rad);
+        background: var(--btn_bg_color);
+    
+        cursor: pointer;
+        border: none;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn:hover {
+        box-shadow: 0 0 0 4px var(--btn_font_color), 
+                    0 0 0 8px var(--btn_bg_color);
+    }
+    .btn:active{
+        transform: scale(0.92);
+    }
+    .textInBtn{
+        color: var(--btn_font_color);
+        font-family: "Quicksand";
+        padding:var(--control_elements_padding);
+        font-size: var(--control_elements_font-size);
+    }
+    
+    .input{
+        text-align: center;
+        font-family: "Quicksand";
+        padding:var(--control_elements_padding);
+        font-size: var(--control_elements_font-size);
+    
+        width: var(--control_elements_width);
+        border-radius: var(--bord_rad);
+        background: var(--btn_bg_color);
+        cursor: pointer;
+        border: none;
+    }
+    .input::placeholder{
+        color: rgba(37, 1, 100, 0.597);
+        text-align: center;
+    }
+    .input:focus{
+        outline: none;
+        box-shadow: 0 0 0 4px var(--btn_font_color), 
+                    0 0 0 8px var(--btn_bg_color);
+    }
+}
