@@ -1,0 +1,107 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+}
+
+.container 
+{
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 
+{
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+h2 
+{
+    color: #444;
+    font-size: 1.2em;
+    margin-top: 25px;
+}
+
+.section 
+{
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f1f3f5;
+    border-radius: 5px;
+}
+
+textarea 
+{
+    width: 100%;
+    min-height: 100px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    margin-bottom: 10px;
+}
+
+button 
+{
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+button:hover 
+{
+    background: #3a5a8f;
+}
+
+button:disabled 
+{
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+#treeVisualization, #classificationResults 
+{
+    padding: 12px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.tree-node 
+{
+    margin-left: 15px;
+    padding-left: 8px;
+    border-left: 2px solid #4a6fa5;
+}
+
+.tree-leaf 
+{
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.classification-path 
+{
+    margin: 10px 0;
+    padding: 8px;
+    background: #f1f3f5;
+    border-radius: 4px;
+}
+
+.classification-result 
+{
+    font-weight: bold;
+    color: #333;
+}
