@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Oswald:wght@200..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: Winky Rough;
+    margin: 20px;
+    background: url(background.jpg) center fixed ;
+    background-size: contain;
+}
+
+.container 
+{
+    max-width: 800px;
+    margin: 0 auto;
+    background: #012010;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 73px 29px rgba(0, 0, 0, 0.764);
+    z-index: 1;
+}
+
+h1
+{
+    color: #b2745b;
+    border-bottom: 1px solid #b2745b;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h2 
+{
+    color: #b2745b;
+    font-size: 1.2em;
+    margin-top: 25px;
+}
+
+.section 
+{
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #1a3407;
+    border-radius: 20px;
+}
+
+textarea 
+{
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #012010;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    color: #b2745b;
+}
+
+button 
+{
+    background: #7c4a37;
+    color: #331f17;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-family: Winky Rough;
+}
+
+button:hover 
+{
+    background: #662b14;
+}
+
+button:disabled 
+{
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+#treeVisualization, #classificationResults 
+{
+    overflow:scroll;
+    padding: 12px;
+    background: #012010;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #b2745b;
+}
+
+.tree-node 
+{
+    margin-left: 15px;
+    padding-left: 8px;
+    border-left: 2px solid #4a6fa5;
+}
+
+.tree-leaf 
+{
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+.classification-path 
+{
+    margin: 10px 0;
+    padding: 8px;
+    background: #012010;
+    border-radius: 4px;
+}
+
+.classification-result 
+{
+    font-weight: bold;
+    color: #a9751b;
+}

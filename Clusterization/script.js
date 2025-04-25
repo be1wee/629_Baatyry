@@ -3,7 +3,10 @@ const ctx = canvas.getContext('2d');
 const clusterButton = document.getElementById('clusterButton');
 const input = document.getElementById('input');
 
-
+function isNaturalNumber(value) {
+    const number = Number(value);
+    return Number.isInteger(number) && number > 0;
+}
 function resizeCanvas(){
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -105,18 +108,34 @@ function drawClusters(points, centroids, numbers_of_clusters) {
 
 clusterButton.addEventListener('click', function() {
     if (points.length > 0) {
-        const k = 4;
+        const k = 4; //placeholder and k have same value esli chto
         let inputValue = Number(input.value);
         if(inputValue !== 0){
-            const result = kMeans(points, inputValue);
-            drawClusters(points, result.centroids, result.numbers_of_clusters);
-        }
+            if(isNaturalNumber(inputValue)){
+                if(points.length<inputValue){
+                    alert(`Поставьте не менее ${inputValue} точек`)
+                }
+                else{
+                    const result = kMeans(points, inputValue);
+                    drawClusters(points, result.centroids, result.numbers_of_clusters);
+                } 
+            }
+            else{
+                alert("Ты что, совсем ку-ку? Введи натуральное число!")
+            }
+
+        } 
         else{
-            const result = kMeans(points, k);
-            drawClusters(points, result.centroids, result.numbers_of_clusters);
+            if(points.length<k){
+                alert(`Поставьте не менее ${k} точек`)
+            }
+            else{
+                const result = kMeans(points, k);
+                drawClusters(points, result.centroids, result.numbers_of_clusters);
+            }   
         }
-        
+    }
+    else{
+        alert("Сначала расставь точки, лол")
     }
 });
-
-        

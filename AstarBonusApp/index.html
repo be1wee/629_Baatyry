@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="629">
+    <title>A*: bonus</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link rel="icon" href="../icon.png">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="Clusterization/index.html">Clusterization</a></li>
+            <li><a href="">The genetic algorithm</a></li>
+            <li><a href="Ant/index.html">The Ant algorithm</a></li>
+            <li><a href="">Decision tree</a></li>
+            <li><a href="">Neuron network</a></li>
+        </ul>
+    </header>
+    <main>
+        <div id="not-map">
+            <h1 class="title">
+                <span class="span-title">Map</span>
+                <span class="span-title">generation</span>
+            </h1>
+            <input type="number" id="sizeMapInput" min="5" max="20" placeholder="Set size of a square map, please!"
+                class="input">
+            <div class="btns">
+                <button class="generateBtn btn" onclick="generateMap()">
+                    <div class="container-text-btn">
+                        <p class="text-btn">Generate the</p>
+                        <p class="text-btn">map</p>
+                    </div>
+                </button>
+                <button class="findPathBtn btn" onclick="tryToFindPath()">
+                    <div class="container-text-btn">
+                        <p class="text-btn">Find the</p>
+                        <p class="text-btn">Path</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div id="mapContainer" class="map"></div>
+        <p id="resultMessage" class="resultMessage"></p>
+    </main>
+</body>
+
+</html>

@@ -34,10 +34,12 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .control_bg{
         width:var(--control_width);
-        height: 13dvh;
+        height: 15dvh;
         bottom: 5dvh;
     
         display: flex;
@@ -69,6 +71,10 @@
         transform: scale(0.92);
     }
     .textInBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         color: var(--btn_font_color);
         font-family: "Quicksand";
         padding:var(--control_elements_padding);
@@ -153,9 +159,13 @@
                     0 0 0 8px var(--btn_bg_color);
     }
     .btn:active{
-        transform: scale(0.92);
+        transform: scale(1.5);
     }
     .textInBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         color: var(--btn_font_color);
         font-family: "Quicksand";
         padding:var(--control_elements_padding);

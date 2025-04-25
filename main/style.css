@@ -5,37 +5,113 @@
     padding: 0;
     margin: 0;
 }
+@media(max-aspect-ratio: 4/3){
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100dvw;
+        height: 100dvh;
+        overflow: hidden;
+        z-index: -2;
+        display: flex;
+        justify-content: center;
+    }
+    .video-background video {
+        object-fit: cover; 
+    }
+    .black-bg{
+        background-color: rgba(0, 0, 0, 0.53);
+        position: absolute;
+        top: 0;
+        width: 100dvw;
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        z-index: -1;
+    }
 
-body{
-    font-family: "Quicksand";
-    color: white;
 
-    background: url(background.jpg);
-    background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
+    main{
+        z-index: 1;
+        font-family: "Quicksand";
 
+        /* background: url(bg8.jpeg); */
+        /* background-repeat: no-repeat; */
+        /* background-attachment:fixed; */
+        /* background-position: center; */
+        /* background-size:cover; */
+
+        height: 100dvh;
+        display: grid;
+        grid-template-columns: repeat(auto, minmax(50px, auto));
+    }
+
+    a{
+        text-decoration: none;
+        
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-bottom: 1px white solid;
+        transition: transform 0.2s ease-in;
+    }
+    p{
+        color:white;
+        font-size: 1.5rem;
+    }
+    a:focus{
+        p{
+            color:black;
+        }
+         background-color: white;
+    }
+
+}
+@media(min-aspect-ratio: 16/9){
+    .video-background{
+        display: none;
+    }
+    .black-bg{
+        display: none;
+    }
+    main{
+        font-family: "Quicksand";
+        color: white;
     
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px;
-    padding: 0.5vw;
+        background: url(background.jpg);
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+    
+        
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7px;
+        padding: 0.5vw;
+    }
+    
+    
+    a{
+        border: 1px solid rgba(255, 255, 255, 0);
+        border-radius: 7vh;
+        background-color: rgba(122, 122, 122, 0.222);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 10vh;
+    }
+    
+    
+    
+    
 }
-
-
-a{
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 7vh;
-    background-color: rgba(122, 122, 122, 0.222);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 10vh;
-}
-
-
-

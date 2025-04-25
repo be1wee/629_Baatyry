@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Jersey+10&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+@media(max-aspect-ratio: 15/9) {
+    :root{
+        --btn_width: 30vw;
+    }
+    .btns{
+        width: 85vw;
+        background-size: 25vw;
+    }
+    img{
+        height: 14vh;
+        width: var(--btn_width);
+    }
+    button{
+        width: var(--btn_width);
+        height: 7vh;
+    }
+    p{
+        font-size: 2vh;
+    }
+}
+
+@media(min-aspect-ratio: 16/9) {
+    :root{
+        --btn_width: 20vw;
+    }
+    .btns{
+        width: 70vw;
+        background-size: 30vw;
+    }
+    img{
+        height: 30vh;
+        width: var(--btn_width);
+    }
+    button{
+        width: var(--btn_width);
+        height: 10vh;
+    }
+    p{
+        font-size: 4vh;
+    }
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    font-family: "Inknut Antiqua"
+}
+
+canvas{
+    height: 100vh;
+    width: 100vw;
+    border: none;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10vh;
+
+    background-image: url(ants.jpeg);
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.container-control{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    border: none;
+    border-radius: 1000px;
+    background: #bd7415;
+
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active{
+    transform: scale(0.92);
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #4d301d;
+    font-family: "Inknut Antiqua";
+}    
