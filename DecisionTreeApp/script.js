@@ -154,8 +154,7 @@ class DecisionTree
             (
                 n => n.isLeaf ? n.classification : this.getMostCommonClassification(n)
             ));
-            return 
-            {
+            return {
                 classification: mostCommonChild,
                 path: [...path, `Strange value... "${node.attribute}: ${attrValue}", the most frequent target attribute is used: ${mostCommonChild}`]
             };
