@@ -138,7 +138,8 @@ class DecisionTree
         
         if (node.isLeaf) 
         {
-            return {
+            return 
+            {
                 classification: node.classification,
                 path: [...path, `Target attribute: ${node.classification}`]
             };
@@ -149,10 +150,12 @@ class DecisionTree
         
         if (!childNode) 
         {
-            const mostCommonChild = this.mostCommonValue(Object.values(node.children).map(n => 
-                n.isLeaf ? n.classification : this.getMostCommonClassification(n)
+            const mostCommonChild = this.mostCommonValue(Object.values(node.children).map
+            (
+                n => n.isLeaf ? n.classification : this.getMostCommonClassification(n)
             ));
-            return {
+            return 
+            {
                 classification: mostCommonChild,
                 path: [...path, `Strange value... "${node.attribute}: ${attrValue}", the most frequent target attribute is used: ${mostCommonChild}`]
             };
