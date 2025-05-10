@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="629">
+    <title>Decisions Tree: base</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Building of the Decisions Tree</h1>
+        
+        <div class="section">
+            <h2>1. Enter the training sample (CSV)</h2>
+            <textarea id="trainingData" placeholder="Enter CSV data (first line - headers)
+            &#10;For example:&#10;Age,Income,Student,Credit_Rating,Bought
+            &#10;<=30,High,No,Good,No&#10;<=30,High,No,Excellent,No"></textarea>
+            <button id="buildTree">Build the Decisions Tree</button>
+        </div>
+        
+        <div class="section">
+            <h2>2. Decisions Tree</h2>
+            <div id="treeVisualization"></div>
+        </div>
+        
+        <div class="section">
+            <h2>3. Classification of new data (CSV)</h2>
+            <textarea id="newData" placeholder="Enter CSV data for classification (same headings as in the training sample)
+            &#10;For example:&#10;Age,Income,Student,Credit_Rating&#10;>40,Medium,Yes,Good"></textarea>
+            <button id="classifyData">Classificate</button>
+        </div>
+        
+        <div class="section">
+            <h2>4. Classification results</h2>
+            <div id="classificationResults"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--
+Возраст,Доход,Студент,Кредитный_рейтинг,Купил
+<=30,Высокий,Нет,Хороший,Нет
+<=30,Высокий,Нет,Отличный,Нет
+31-40,Высокий,Нет,Хороший,Да
+>40,Средний,Нет,Хороший,Да
+>40,Низкий,Да,Хороший,Да
+>40,Низкий,Да,Отличный,Нет
+31-40,Низкий,Да,Отличный,Да
+<=30,Средний,Нет,Хороший,Нет
+<=30,Низкий,Да,Хороший,Да
+>40,Средний,Да,Хороший,Да
+<=30,Средний,Да,Отличный,Да
+31-40,Средний,Нет,Отличный,Да
+31-40,Высокий,Да,Хороший,Да
+>40,Средний,Нет,Отличный,Нет
+-->
